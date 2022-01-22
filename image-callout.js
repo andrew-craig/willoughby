@@ -1,5 +1,4 @@
 import React from 'react'
-import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import SimpleReactLightbox, {SRLWrapper} from 'simple-react-lightbox'
 

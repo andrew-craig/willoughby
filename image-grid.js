@@ -1,37 +1,9 @@
 import React from 'react'
-import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import SimpleReactLightbox, {SRLWrapper} from 'simple-react-lightbox'
 
-export default function ImageGrid2021(props) {
-  const data = useStaticQuery(graphql`
-  {
-    cropped: allFile(
-      filter: {absolutePath: {regex: "/year-in-review/2021/cropped/"}, ext: {eq: ".jpg"}}
-      sort: {fields: name, order: ASC}
-    ) {
-      nodes {
-        publicURL
-        name
-        childImageSharp {
-          gatsbyImageData(
-            width: 400
-            placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
-          )
-        }
-      }
-    }
-    fullsize: allFile(
-      filter: {absolutePath: {regex: "/year-in-review/2021/full-size/"}, ext: {eq: ".jpg"}}
-      sort: {fields: name, order: ASC}
-    ) {
-      nodes {
-        name
-        publicURL
-      }
-    }
-  }`)
+export default function ImageGrid(props) {
+
   const classMap = new Map([
     [1, 'fw-100'],
     [2, 'fw-50'],
@@ -64,8 +36,8 @@ export default function ImageGrid2021(props) {
       <SRLWrapper options={options}>
       <div className='image-container' >
         {props.content.map(photo => (
-          <a href={data.fullsize.nodes.filter(fullphoto => fullphoto.name === photo.name)[0].publicURL} className={classMap.get(props.images_per_row)}>
-            <GatsbyImage image={data.cropped.nodes.filter(fullphoto => fullphoto.name === photo.name)[0].childImageSharp.gatsbyImageData} aspectRatio={props.aspect_ratio} alt={photo.description} />
+          <a href={props.data.fullsize.nodes.filter(fullphoto => fullphoto.name === photo.name)[0].publicURL} className={classMap.get(props.images_per_row)}>
+            <GatsbyImage image={props.data.cropped.nodes.filter(fullphoto => fullphoto.name === photo.name)[0].childImageSharp.gatsbyImageData} aspectRatio={props.aspect_ratio} alt={photo.description} />
           </a>
         ))}
       </div>
