@@ -76,13 +76,16 @@ h1 {
 	color: #154B8A;
 }
 
+article > h1 {
+	margin-bottom: 0.1rem;
+}
+
 .recipe > h1 {
 	color: #488008;
 }
 
 .travel-post > h1 {
 	color: #154B8A;
-	margin-bottom: 0;
 }
 
 h2 {
@@ -102,6 +105,16 @@ h4 {
 
 p {
 	margin-bottom: 1rem;
+}
+
+a {
+	color: #0369a1;
+	text-decoration: underline;
+	text-underline-offset: 1px;
+}
+
+a:hover {
+	color: #0c4a6e;
 }
 
 ul, ol {
@@ -139,6 +152,17 @@ ul li {
 	font-size: 16px;
 	color: #828282;
 }
+
+.article-meta a {
+	color: #828282;
+	text-decoration-color: #b4b4b4;
+}
+
+.article-meta a:hover {
+	color: #4e4e4e;
+	text-decoration-color: #4e4e4e;
+}
+
 
 /* LEVEL 1 PAGES */
 
@@ -264,7 +288,6 @@ ul li {
 
 /* RECIPES */
 
-
 .search-container {
 	width: 100%;
 	margin-bottom: 0 auto 1rem auto;
@@ -323,6 +346,10 @@ ul li {
     background-color: #699012;
 	color: #fcfcfc;
 
+}
+
+.feature-image {
+	width: 100%;
 }
 
 /* TRAVEL */
