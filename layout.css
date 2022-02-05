@@ -8,7 +8,7 @@ html {
 	height: 100%;
 	width: 100%; 
 	font-size: 18px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Inter', sans-serif;
 	background-color: #fcfcfc;
 }
 
@@ -51,7 +51,7 @@ h1, h2, h3, h4, p, ul, ol {
 }
 
 h1, h2, h3, h4 {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Inter', sans-serif;
 	font-weight: 700;
 	text-align: left;
 	color: #333333;
