@@ -25,7 +25,7 @@ body {
 
 main {
 	width: 100%;
-	max-width: 760px;
+	max-width: 768px;
 	color: #3f3f3f;
 	font-weight: 400;
 	line-height: 1.6;
@@ -36,7 +36,7 @@ main {
 
 .content-container {
 	width: 100%;
-	max-width: 760px;
+	max-width: 768px;
 	max-width: 90vw;
 	margin: 0 auto;
 }
