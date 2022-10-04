@@ -604,15 +604,12 @@ figcaption {
 	.card-title {
 		font-size: 1.3rem;
 		line-height: 1.15em;
+		color: #333333
 	}
 
 	.card-subtitle {
 		margin: 0.15rem 0;
 		font-size: 1rem;
-	}
-
-	.recipe-ct {
-		color: #488008;
 	}
 
 	.card-detail {
