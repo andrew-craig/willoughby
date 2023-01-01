@@ -8,7 +8,6 @@ export default function TagButton(props) {
     } else {
         buttonClass = 'tag-button'
     }
-    console.log(buttonClass)
 
     return (
         <button 
