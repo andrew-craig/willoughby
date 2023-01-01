@@ -353,6 +353,11 @@ ul li {
 	width: 100%;
 }
 
+.recipeInstructions em {
+	font-style: normal;
+	font-weight: 700;
+}
+
 /* TRAVEL */
 
 .latest-gcc:first-child {
