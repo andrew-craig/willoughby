@@ -130,7 +130,7 @@ ol {
 
 ul {
 	list-style-type: disc;
-	margin-left: 25px;
+	margin-left: 22px;
 	padding-left: 0;
 }
 
@@ -141,6 +141,7 @@ ol li {
 
 ul li {
 	padding-bottom: 0.3em;
+	padding-left: 3px;
 }
 
 .article-meta {
@@ -506,6 +507,35 @@ figcaption {
 	background-color: #33000000;
 	display: none;
 }
+
+@media (min-aspect-ratio: 6/5) {
+	main {
+		max-width: 800px;
+	}
+
+	.recipeContent {
+	  display: flex;
+	  flex-direction: row;
+	  justify-content: space-between;
+	}
+
+	.recipeIngredients {
+		flex-basis: 35%;
+		padding-right: 3em;
+	}
+
+	.recipeIngredients ul {
+		margin-left: 1em;
+	}
+
+	.recipeIngredients ul li {
+		padding-left: 3px;
+	}
+
+	.recipeInstructions {
+		flex-basis: 65%;
+	}
+  }
 
 @media screen and (max-width: 800px) {
 	html {
