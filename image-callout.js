@@ -32,7 +32,7 @@ export default function ImageCallout(props) {
           <p className='image-callout-txt fw-50'>{row.text}</p>
           {row.images.map(photo => (
             <div key={photo.name} className='fw-25 callout-image' onClick={(e) => showLightbox(photo.name, e)}>
-              <GatsbyImage image={props.data.cropped.nodes.filter(croppedphoto => croppedphoto.name === photo.name)[0].childImageSharp.gatsbyImageData} aspectRatio={1} alt={photo.description} />
+              <GatsbyImage image={props.data.cropped.nodes.filter(croppedphoto => croppedphoto.name === photo.name)[0].childImageSharp.gatsbyImageData} alt={photo.description} />
             </div>
           ))}
         </div>
