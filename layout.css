@@ -694,7 +694,7 @@ figcaption {
 		flex-grow: 2;
 	}
 
-	.card-title {
+	.recipe-ct {
 		font-size: 1.125rem;
 		font-weight: 500;
 		line-height: 1.15em;
@@ -706,7 +706,7 @@ figcaption {
 		font-size: 1rem;
 	}
 
-	.card-detail {
+	.recipe-cd {
 		display: block;
 		margin: 0;
 		text-align: left;
