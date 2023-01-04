@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { GatsbyImage, getSrc } from "gatsby-plugin-image";
 import SimpleLightbox from './lightbox';
 
-export default function ImageGrid(props) {
+export default function ImageGrid({ content, queryData, imagesPerRow}) {
   const [isOpen, setOpen] = useState(false);
   const [currentImageIndex, setCurrentIndex] = useState(0);
   const classMap = new Map([
@@ -12,25 +12,34 @@ export default function ImageGrid(props) {
     [4, '22%'],
   ]) 
 
-  const imgFB = classMap.get(props.images_per_row)
+  const imgFB = classMap.get(imagesPerRow)
  
-  const lightboxImages = props.content.map(photo => ({
-    src: getSrc(props.data.fullsize.nodes.filter(fullphoto => fullphoto.name === photo.name)[0]),
+  const lightboxImages = content.map(photo => ({
+    src: getSrc(queryData.fullsize.nodes.filter(fullphoto => fullphoto.name === photo.name)[0]),
     alt: photo.description,
     caption: photo.description
   }));
  
-  function showLightbox(index, e) {
-    console.log('click received');
+  function showLightbox(index) {
     setCurrentIndex(index);
     setOpen(true);
   }
 
+  function handleClick(index, e) {
+    showLightbox(index)
+  }
+
+  function handleKeyDown(index, e) {
+    if (e.key === 'Enter') {
+      showLightbox(index)
+    }
+  }
+
   return (
       <div className='image-container'>
-        {props.content.map((photo, index) => (
-          <div key={photo.name} className='grid-image' style={{flexBasis:imgFB}} onClick={(e) => showLightbox(index, e)}>
-            <GatsbyImage image={props.data.cropped.nodes.filter(fullphoto => fullphoto.name === photo.name)[0].childImageSharp.gatsbyImageData} aspectRatio={props.aspect_ratio} alt={photo.description} />
+        {content.map((photo, index) => (
+          <div key={photo.name} className='grid-image' style={{flexBasis:imgFB}} onClick={(e) => handleClick(index, e)} onKeyDown={(e) => handleKeyDown(index, e)} role="presentation">
+            <GatsbyImage image={queryData.cropped.nodes.filter(fullphoto => fullphoto.name === photo.name)[0].childImageSharp.gatsbyImageData} alt={photo.description} />
           </div>
         ))}
         <SimpleLightbox

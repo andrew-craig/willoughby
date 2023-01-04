@@ -25,13 +25,23 @@ export default function ImageCallout(props) {
     setOpen(true);
   }
 
+  function handleClick(name, e) {
+    showLightbox(name)
+  }
+
+  function handleKeyDown(name, e) {
+    if (e.key === 'Enter') {
+      showLightbox(name)
+    }
+  }
+
   return (
     <div className='image-callout-container'>
       {props.content.map(row => (
         <div className='image-callout' key={row.id}>
           <p className='image-callout-txt fw-50'>{row.text}</p>
           {row.images.map(photo => (
-            <div key={photo.name} className='fw-25 callout-image' onClick={(e) => showLightbox(photo.name, e)}>
+            <div key={photo.name} className='fw-25 callout-image' onClick={(e) => handleClick(photo.name, e)}  onKeyDown={(e) => handleKeyDown(photo.name, e)} role="presentation">
               <GatsbyImage image={props.data.cropped.nodes.filter(croppedphoto => croppedphoto.name === photo.name)[0].childImageSharp.gatsbyImageData} alt={photo.description} />
             </div>
           ))}

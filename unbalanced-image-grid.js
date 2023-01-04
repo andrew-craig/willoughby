@@ -13,7 +13,6 @@ export default function UnbalancedImageGrid({ content, queryData, flexBasisArray
   }));
  
   function showLightbox(index, e) {
-    console.log('click received');
     setCurrentIndex(index);
     setOpen(true);
   }
