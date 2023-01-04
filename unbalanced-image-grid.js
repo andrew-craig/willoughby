@@ -2,20 +2,12 @@ import React, { useState } from 'react';
 import { GatsbyImage, getSrc } from "gatsby-plugin-image";
 import SimpleLightbox from './lightbox';
 
-export default function ImageGrid(props) {
+export default function UnbalancedImageGrid({ content, queryData, flexBasisArray}) {
   const [isOpen, setOpen] = useState(false);
   const [currentImageIndex, setCurrentIndex] = useState(0);
-  const classMap = new Map([
-    [1, '100%'],
-    [2, '45%'],
-    [3, '28%'],
-    [4, '22%'],
-  ]) 
-
-  const imgFB = classMap.get(props.images_per_row)
  
-  const lightboxImages = props.content.map(photo => ({
-    src: getSrc(props.data.fullsize.nodes.filter(fullphoto => fullphoto.name === photo.name)[0]),
+  const lightboxImages = content.map(photo => ({
+    src: getSrc(queryData.fullsize.nodes.filter(fullphoto => fullphoto.name === photo.name)[0]),
     alt: photo.description,
     caption: photo.description
   }));
@@ -28,9 +20,9 @@ export default function ImageGrid(props) {
 
   return (
       <div className='image-container'>
-        {props.content.map((photo, index) => (
-          <div key={photo.name} className='grid-image' style={{flexBasis:imgFB}} onClick={(e) => showLightbox(index, e)}>
-            <GatsbyImage image={props.data.cropped.nodes.filter(fullphoto => fullphoto.name === photo.name)[0].childImageSharp.gatsbyImageData} aspectRatio={props.aspect_ratio} alt={photo.description} />
+        {content.map((photo, index) => (
+          <div key={photo.name} className='grid-image' style={{flexBasis:flexBasisArray[index]}} onClick={(e) => showLightbox(index, e)}>
+            <GatsbyImage image={queryData.cropped.nodes.filter(fullphoto => fullphoto.name === photo.name)[0].childImageSharp.gatsbyImageData} alt={photo.description} />
           </div>
         ))}
         <SimpleLightbox

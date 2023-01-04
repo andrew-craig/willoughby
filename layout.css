@@ -484,6 +484,11 @@ figcaption {
 	margin: 1rem 0;
 }
 
+.grid-image {
+    flex-grow: 1;
+	object-fit: cover;
+}
+
 .fw-100 {
     flex-grow: 1;
 	flex-basis: 100%;
@@ -511,7 +516,7 @@ figcaption {
 	object-fit: cover;
 }
 
-.lb-img, .fw-100 > img, .fw-50 > img, .fw-33 > img, .fw-25 > img {
+.lb-img, .grid-image > img, .fw-100 > img, .fw-50 > img, .fw-33 > img, .fw-25 > img {
 	width: 100%;
 }
 
