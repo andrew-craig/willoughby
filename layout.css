@@ -66,10 +66,11 @@ h1 {
 .l1-page-title {
 	text-align: center;
 	text-transform: uppercase;
+	letter-spacing: 0.2px;
 }
 
 .recipe-green-text {
-	color: #488008;
+	color: #05664B;
 }
 
 .travel-blue-text {
