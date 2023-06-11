@@ -392,10 +392,16 @@ ul li {
 	border: none;
 }
 
+@supports not ((display: flex) and (gap: 1em)) {
+	.tag-button {
+		margin-left: 0.25rem;
+		margin-right: 0.25rem;
+	}
+}
+
 .tag-button-active {
     background-color: #488008;
 	color: #fcfcfc;
-
 }
 
 .feature-image {
