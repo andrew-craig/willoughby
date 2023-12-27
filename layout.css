@@ -392,7 +392,6 @@ ul li {
 	border: none;
 }
 
-/*
 
 @supports not ((display: flex) and (gap: 1em)) {
 	.tag-button {
@@ -401,7 +400,6 @@ ul li {
 	}
 }
 
-*/
 
 .tag-button-active {
     background-color: #488008;
