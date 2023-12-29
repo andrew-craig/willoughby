@@ -17,7 +17,6 @@ export default function ImageCallout(props) {
 
   // create a map to look up the index of the lightboxImage from it's name
   const imageMap = new Map(preprocessedImages.map((obj, index) => [obj.name, index]));
-  console.log(imageMap)
 
  
   function showLightbox(name, e) {
