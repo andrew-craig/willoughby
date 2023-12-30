@@ -422,7 +422,8 @@ ul li {
 	grid-column-end: 4;
 }
 
-figure {
+
+span > figure, span > .gatsby-resp-image-wrapper {
 	margin: 0 0 2.5rem 0;
 }
 
