@@ -720,7 +720,7 @@ figcaption {
 	.mobile-gc-row > img, .mobile-gc-row > svg {
 		width: 20%;
 		height: 100%;
-		border-radius: 8px;
+		border-radius: 6px;
 		position: relative;
 		margin: 0;
 	}
@@ -728,7 +728,7 @@ figcaption {
 	.mobile-gc-row > .gatsby-image-wrapper-constrained {
 		width: 20%;
 		height: 100%;
-		border-radius: 8px;
+		border-radius: 6px;
 	}
 
 	.mobile-ctm-row {
@@ -738,6 +738,18 @@ figcaption {
 		padding: 0 0.5rem 0 0.8rem;
 		background: none;
 		flex-grow: 2;
+	}
+
+	.search-box {
+		border-radius: 6px;
+	}
+
+	.tag-button {
+		border-radius:6px;
+	}
+
+	.grid-card img, .grid-card svg {
+		border-radius: 6px;
 	}
 
 	.recipe-ct {
