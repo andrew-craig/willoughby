@@ -9,6 +9,6 @@ export default function lbImage(props) {
 
 
     return (
-        <div {...props} />
+        <h1 style={{ color: `tomato` }} {...props} />
     )
 }

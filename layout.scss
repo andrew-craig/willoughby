@@ -1,3 +1,23 @@
+$text-light: #3f3f3f;
+$heading-light: #333333;
+$card-title-light: #fafafa;
+
+$text-dark: #c9c9c9;
+$heading-dark: #bdbdbd;
+$card-title-dark: #eaeaea;
+
+
+$travel-theme-color: #3c6ea8;
+$recipe-theme-color: #05664B;
+
+$article-meta-text-light: #828282;
+$article-meta-hover-light: #4e4e4e;
+$article-meta-decoration-light: #b4b4b4;
+
+$article-meta-text-dark: #aaa;
+$article-meta-hover-dark: #4e4e4e;
+$article-meta-decoration-dark: #b4b4b4;
+
 * {
 	-webkit-font-smoothing: antialiased;
 	-moz-box-sizing: border-box;
@@ -9,7 +29,7 @@ html {
 	width: 100%; 
 	font-size: 18px;
 	font-family: 'Inter', sans-serif;
-	background-color: #fcfcfc;
+
 }
 
 body {
@@ -23,15 +43,24 @@ body {
   
 }
 
+.tl-container {
+	background-color: #1c1c1c;
+	padding-top: 1rem;
+}
+
 main {
 	width: 100%;
 	max-width: 768px;
-	color: #3f3f3f;
+	color: $text-light;
 	font-weight: 400;
 	line-height: 1.6;
 	margin: 0 auto 0 auto;
 	padding-bottom: 2rem;
 	min-height: 100vh;
+}
+
+.dark main {
+	color: $text-dark;
 }
 
 .content-container {
@@ -42,7 +71,7 @@ main {
 }
 
 article {
-	margin: 1rem 0;
+	margin: 1rem 0 1rem 0;
 }
 
 h1, h2, h3, h4, p, ul, ol {
@@ -54,8 +83,12 @@ h1, h2, h3, h4 {
 	font-family: 'Inter', sans-serif;
 	font-weight: 700;
 	text-align: left;
-	color: #333333;
+	color: $heading-light;
 	line-height: 1.1em;
+}
+
+.dark h1, .dark h2, .dark h3, .darl h4 {
+		color: $heading-dark;	
 }
 
 h1 {
@@ -70,11 +103,20 @@ h1 {
 }
 
 .recipe-green-text {
-	color: #05664B;
+	color: $recipe-theme-color;
 }
 
 .travel-blue-text {
-	color: #154B8A;
+	color: $travel-theme-color;
+	/* color: #154B8A; */
+}
+
+.dark .travel-blue-text {
+	color: $travel-theme-color;
+}
+
+.post-title {
+	margin-top: 0;
 }
 
 article > h1 {
@@ -85,8 +127,8 @@ article > h1 {
 	color: #488008;
 }
 
-.travel-post > h1 {
-	color: #154B8A;
+.travel-post > .post-title {
+	color: $travel-theme-color;
 }
 
 h2 {
@@ -152,19 +194,32 @@ ul li {
 .article-meta p {
 	margin: 0 0 0.2rem 0;
 	font-size: 16px;
-	color: #828282;
+	color: $article-meta-text-light;
 }
 
 .article-meta a {
-	color: #828282;
-	text-decoration-color: #b4b4b4;
+	color: $article-meta-text-light;
+	text-decoration-color: $article-meta-decoration-light;
 }
 
 .article-meta a:hover {
-	color: #4e4e4e;
-	text-decoration-color: #4e4e4e;
+	color: $article-meta-hover-light;
+	text-decoration-color: $article-meta-hover-light;
 }
 
+.dark .article-meta p {
+	color: $article-meta-text-dark;
+}
+
+.dark .article-meta a {
+	color: $article-meta-text-dark;
+	text-decoration-color: $article-meta-decoration-dark;
+}
+
+.dark .article-meta a:hover {
+	color: $article-meta-hover-dark;
+	text-decoration-color: $article-meta-hover-dark;
+}
 
 /* LEVEL 1 PAGES */
 
@@ -247,10 +302,14 @@ ul li {
 
 .card-title {
 	font-weight: 700;
-    color: #fafafa;
+    color: $card-title-light;
 	font-size: 1.1rem;
 	margin: 0;
 	line-height: 1.25em;
+}
+
+.dark .card-title {
+	color: $card-title-dark;
 }
 
 .card-subtitle {
@@ -424,8 +483,17 @@ ul li {
 
 
 span > figure, span > .gatsby-resp-image-wrapper {
-	margin: 0 0 2.5rem 0;
+	margin: 0 0 4rem 0;
 }
+
+figure > .gatsby-resp-image-wrapper {
+	margin-bottom: 1em;
+}
+
+.travel-post .gatsby-resp-image-wrapper {
+	box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+}
+
 
 figcaption {
     text-align: center;
@@ -456,12 +524,12 @@ figcaption {
 }
 
 .trip-item-text > p {
-	color: #3f3f3f;
+	color: $text-light;
 	margin: 0.5rem 0;
 }
 
-.travel-post .gatsby-resp-image-wrapper {
-	box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+.dark .trip-item-text > p {
+	color: $text-dark;
 }
 
 .location {
