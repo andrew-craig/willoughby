@@ -1,23 +1,28 @@
+/* Theme colours */
+$travel-theme-color: #3c6ea8;
+$recipe-theme-color: #05664B;
+
+/* Light */
+$background-light: #fcfcfc;
 $text-light: #3f3f3f;
 $heading-light: #333333;
 $card-title-light: #fafafa;
-
-$text-dark: #c9c9c9;
-$heading-dark: #bdbdbd;
-$card-title-dark: #eaeaea;
-
-
-$travel-theme-color: #3c6ea8;
-$recipe-theme-color: #05664B;
 
 $article-meta-text-light: #828282;
 $article-meta-hover-light: #4e4e4e;
 $article-meta-decoration-light: #b4b4b4;
 
+/* Dark */
+$background-dark: #1c1c1c;
+$text-dark: #c9c9c9;
+$heading-dark: #bdbdbd;
+$card-title-dark: #eaeaea;
+
 $article-meta-text-dark: #aaa;
 $article-meta-hover-dark: #4e4e4e;
 $article-meta-decoration-dark: #b4b4b4;
 
+/* CSS */
 * {
 	-webkit-font-smoothing: antialiased;
 	-moz-box-sizing: border-box;
@@ -29,7 +34,7 @@ html {
 	width: 100%; 
 	font-size: 18px;
 	font-family: 'Inter', sans-serif;
-
+	background-color: $background-light;
 }
 
 body {
@@ -44,8 +49,11 @@ body {
 }
 
 .tl-container {
-	background-color: #1c1c1c;
-	padding-top: 1rem;
+	background-color: $background-light;
+}
+
+.tl-container.dark {
+	background-color: $background-dark;
 }
 
 main {
@@ -68,6 +76,7 @@ main {
 	max-width: 768px;
 	max-width: 90vw;
 	margin: 0 auto;
+	padding-top: 1rem;
 }
 
 article {
@@ -87,7 +96,7 @@ h1, h2, h3, h4 {
 	line-height: 1.1em;
 }
 
-.dark h1, .dark h2, .dark h3, .darl h4 {
+.dark h1, .dark h2, .dark h3, .dark h4 {
 		color: $heading-dark;	
 }
 
@@ -97,6 +106,7 @@ h1 {
 }
 
 .l1-page-title {
+	margin-top: 0;
 	text-align: center;
 	text-transform: uppercase;
 	letter-spacing: 0.2px;
@@ -109,10 +119,6 @@ h1 {
 .travel-blue-text {
 	color: $travel-theme-color;
 	/* color: #154B8A; */
-}
-
-.dark .travel-blue-text {
-	color: $travel-theme-color;
 }
 
 .post-title {
@@ -666,6 +672,47 @@ figcaption {
 	fill: #05664B;
 }
 
+/* User driven dark mode */
+@media (prefers-color-scheme: dark) {
+	html {
+		background-color: $background-dark;
+	}
+	main {
+		color: $text-dark;
+	}
+
+	.tl-container {
+		background-color: $background-dark;
+	}
+
+	h1, h2, h3, h4 {
+		color: $heading-dark;	
+	}
+
+	.trip-item-text > p {
+		color: $text-dark;
+	}
+
+	.card-title {
+		color: $card-title-dark;
+	}
+
+
+	.article-meta p {
+		color: $article-meta-text-dark;
+	}
+	
+	.article-meta a {
+		color: $article-meta-text-dark;
+		text-decoration-color: $article-meta-decoration-dark;
+	}
+	
+	.article-meta a:hover {
+		color: $article-meta-hover-dark;
+		text-decoration-color: $article-meta-hover-dark;
+	}
+}
+
 
 @media (min-aspect-ratio: 6/5) {
 	main {
@@ -824,7 +871,7 @@ figcaption {
 		font-size: 1.125rem;
 		font-weight: 500;
 		line-height: 1.15em;
-		color: #333333
+		color: #333333;
 	}
 
 	.card-subtitle {
@@ -847,6 +894,12 @@ figcaption {
 
 	.trips-item {
 		grid-template-columns: auto;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		.recipe-ct {
+			color: $card-title-dark;
+		}
 	}
 
 }

@@ -4,9 +4,9 @@ import "@fontsource/inter/500.css"
 import "@fontsource/inter/700.css"
 import './layout.scss'
 
-export default function Layout({ props, children }) {
+export default function Layout({ mode, children }) {
   return (
-      <div className="tl-container dark">
+      <div className={`tl-container ${ mode }`}>
         <main>
           {children}
         </main>
