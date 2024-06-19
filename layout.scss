@@ -1,22 +1,32 @@
 /* Theme colours */
 $travel-theme-color: #3c6ea8;
-$recipe-theme-color: #05664B;
+$recipe-theme-color: hsl(163, 91%, 21%);
+
 
 /* Light */
+$light-dark-green: hsl(163, 26%, 88%);
 $background-light: #fcfcfc;
+$background-half-offset-light: hsl(0, 0%, 34%);
+$background-offset-light: #e3e3e3;
 $text-light: #3f3f3f;
 $heading-light: #333333;
 $card-title-light: #fafafa;
 
 $article-meta-text-light: #828282;
 $article-meta-hover-light: #4e4e4e;
-$article-meta-decoration-light: #b4b4b4;
+$article-meta-decoration-light: hsl(0, 0%, 71%);
 
 /* Dark */
+$recipe-theme-color-dark: hsl(163, 50%, 36%);
+$dark-dark-green: hsl(163, 50%, 20%);
+
 $background-dark: #1c1c1c;
+$background-half-offset-dark: hsl(0, 0%, 16%);
+$background-offset-dark: hsl(0, 0%, 21%);
 $text-dark: #c9c9c9;
 $heading-dark: #bdbdbd;
 $card-title-dark: #eaeaea;
+
 
 $article-meta-text-dark: #aaa;
 $article-meta-hover-dark: #4e4e4e;
@@ -271,19 +281,48 @@ ul li {
 	border-radius: 8px;
 }
 
+.grid-card:has(svg) {
+	background-color: #0369a1;
+}
+
+
 .grid-card img, .grid-card svg {
 	object-fit: cover;
     position: absolute;
     display: block;
+    margin: auto;
+	border-radius: 8px;
+}
+
+.grid-card img {
     width: 100%;
     height: 100%;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
-    margin: auto;
-	border-radius: 8px;
 }
+
+.grid-card svg {
+	width: 100%;
+    height: 85%;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.grid-card:has(svg) {
+	background-color: $background-half-offset-light;
+}
+
+#default-image-fill {
+	fill: $light-dark-green;
+}
+
+#default-image-background {
+	fill: $background-half-offset-light;
+}
+
 
 .grid-card > .gatsby-image-wrapper-constrained {
 	height: 100%;
@@ -426,6 +465,12 @@ ul li {
 	box-sizing: border-box;
 	font-size: 1rem;
 	appearance: none;
+	background-color: transparent;
+}
+
+.search-box::placeholder {
+	color: $article-meta-text-light;
+	opacity: 1; /* Firefox */
 }
 
 .search-box:focus {
@@ -444,8 +489,8 @@ ul li {
 
 .tag-button {
 	display: inline-block;
-    background-color: #e2e2e2;
-	color: #3f3f3f;
+    background-color: $background-offset-light;
+	color: $text-light;
     font-size: 0.875rem;
     border-radius: 8px;
     padding: 0.5rem 1rem;
@@ -479,6 +524,9 @@ ul li {
 	font-style: normal;
 	font-weight: 700;
 }
+
+
+
 
 /* TRAVEL */
 
@@ -669,49 +717,9 @@ figcaption {
 }
 
 .back-button path {
-	fill: #05664B;
+	fill: $recipe-theme-color;
 }
 
-/* User driven dark mode */
-@media (prefers-color-scheme: dark) {
-	html {
-		background-color: $background-dark;
-	}
-	main {
-		color: $text-dark;
-	}
-
-	.tl-container {
-		background-color: $background-dark;
-	}
-
-	h1, h2, h3, h4 {
-		color: $heading-dark;	
-	}
-
-	.trip-item-text > p {
-		color: $text-dark;
-	}
-
-	.card-title {
-		color: $card-title-dark;
-	}
-
-
-	.article-meta p {
-		color: $article-meta-text-dark;
-	}
-	
-	.article-meta a {
-		color: $article-meta-text-dark;
-		text-decoration-color: $article-meta-decoration-dark;
-	}
-	
-	.article-meta a:hover {
-		color: $article-meta-hover-dark;
-		text-decoration-color: $article-meta-hover-dark;
-	}
-}
 
 
 @media (min-aspect-ratio: 6/5) {
@@ -831,6 +839,9 @@ figcaption {
 		justify-content: space-between;
 	}
 
+	.mobile-gc-row:has(svg) {
+		background-color: transparent;
+	}
 
 	.mobile-gc-row > img, .mobile-gc-row > svg {
 		width: 20%;
@@ -839,6 +850,7 @@ figcaption {
 		position: relative;
 		margin: 0;
 	}
+
 
 	.mobile-gc-row > .gatsby-image-wrapper-constrained {
 		width: 20%;
@@ -888,7 +900,7 @@ figcaption {
 		overflow: hidden;
 		white-space: nowrap;
 	    font-size: 14px;
-    	color: #828282;
+    	color: $article-meta-text-light;
 		padding-top: 0.1em;
 	}
 
@@ -900,6 +912,10 @@ figcaption {
 		.recipe-ct {
 			color: $card-title-dark;
 		}
+
+		.recipe-cd{
+			color: $article-meta-text-dark;
+		}
 	}
 
 }
@@ -910,4 +926,82 @@ figcaption {
     {
         display: none !important;
     }
+}
+
+/* User driven dark mode */
+@media (prefers-color-scheme: dark) {
+	html {
+		background-color: $background-dark;
+	}
+	main {
+		color: $text-dark;
+	}
+
+	.tl-container {
+		background-color: $background-dark;
+	}
+
+	h1, h2, h3, h4 {
+		color: $heading-dark;	
+	}
+
+	.trip-item-text > p {
+		color: $text-dark;
+	}
+
+	.card-title {
+		color: $card-title-dark;
+	}
+
+
+	.article-meta p {
+		color: $article-meta-text-dark;
+	}
+	
+	.article-meta a {
+		color: $article-meta-text-dark;
+		text-decoration-color: $article-meta-decoration-dark;
+	}
+	
+	.article-meta a:hover {
+		color: $article-meta-hover-dark;
+		text-decoration-color: $article-meta-hover-dark;
+	}
+
+	.tag-button {
+		background-color: $background-offset-dark;
+		color: $text-dark;
+	}
+
+	.recipe-green-text {
+		color: $recipe-theme-color-dark;
+	}
+
+	.search-box {
+		border-color: $text-dark;
+	}
+
+	.search-box::placeholder {
+		color: $article-meta-text-dark;
+	}
+
+	.search-box:focus {
+		border-color: $recipe-theme-color-dark;
+	}
+
+	.grid-card:has(svg) {
+		background-color: $background-half-offset-dark;
+	}
+	
+	#default-image-fill {
+		fill: $dark-dark-green;
+	}
+	
+	#default-image-background {
+		fill: $background-half-offset-dark;
+	}
+
+	.back-button path {
+		fill: $recipe-theme-color-dark;
+	}
 }
