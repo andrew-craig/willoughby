@@ -457,6 +457,7 @@ ul li {
 	text-align: center;
 	display: block;
 	margin: 0 auto 0.8rem auto;
+	color: $text-light;
 	outline: none;
 	box-shadow: none;
 	-webkit-appearance: none;
@@ -908,16 +909,6 @@ figcaption {
 		grid-template-columns: auto;
 	}
 
-	@media (prefers-color-scheme: dark) {
-		.recipe-ct {
-			color: $card-title-dark;
-		}
-
-		.recipe-cd{
-			color: $article-meta-text-dark;
-		}
-	}
-
 }
 
 @media print
@@ -979,6 +970,7 @@ figcaption {
 
 	.search-box {
 		border-color: $text-dark;
+		color: $text-dark;
 	}
 
 	.search-box::placeholder {
@@ -1003,5 +995,23 @@ figcaption {
 
 	.back-button path {
 		fill: $recipe-theme-color-dark;
+	}
+	
+	@media screen and (max-width: 500px) {
+		.recipe-ct {
+			color: $card-title-dark;
+		}
+
+		.recipe-cd{
+			color: $article-meta-text-dark;
+		}
+
+		.grid-card:has(svg) {
+			background-color:transparent;
+		}
+
+		#default-image {
+			fill: $background-half-offset-dark;
+		}
 	}
 }
