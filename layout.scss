@@ -734,6 +734,7 @@ figcaption {
 	font-size: 1.5rem;
 	text-align: center;
 	margin-top: 8px;
+	font-family: 'Roboto Mono', monospace;
 }
 
 .recipeTimerControls {
@@ -750,7 +751,12 @@ figcaption {
 	height: 40px;
 	width: 40px;
 	background-color: hsl(163, 12%, 72%);
+	
 	border-radius: 100%;
+}
+
+.recipeTimerButton svg {
+	stroke: #3f3f3f;
 }
 
 .rtbGreen {
