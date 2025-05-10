@@ -721,6 +721,46 @@ figcaption {
 	fill: $recipe-theme-color;
 }
 
+.recipeTimersContainer {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 1rem;
+
+}
+
+.recipeTimer {
+	width: 100px;
+	font-size: 1.5rem;
+	text-align: center;
+	margin-top: 8px;
+}
+
+.recipeTimerControls {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	gap: 8px;
+	margin-top: 8px;
+}
+
+.recipeTimerButton {
+	padding: 8px;
+	border: 0;
+	height: 40px;
+	width: 40px;
+	background-color: hsl(163, 12%, 72%);
+	border-radius: 100%;
+}
+
+.rtbGreen {
+	background-color: hsl(163, 50%, 70%);
+}
+
+.rtbYellow {
+	background-color: hsl(55, 50%, 70%);
+}
+
 
 
 @media (min-aspect-ratio: 6/5) {
@@ -734,16 +774,16 @@ figcaption {
 	  justify-content: space-between;
 	}
 
-	.recipeIngredients {
+	.recipeIngredientsTimers {
 		flex-basis: 35%;
 		padding-right: 3em;
 	}
 
-	.recipeIngredients ul {
+	.recipeIngredientsTimers ul {
 		margin-left: 1em;
 	}
 
-	.recipeIngredients ul li {
+	.recipeIngredientsTimers ul li {
 		padding-left: 3px;
 	}
 
