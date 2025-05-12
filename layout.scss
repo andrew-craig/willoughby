@@ -730,11 +730,16 @@ figcaption {
 }
 
 .recipeTimer {
-	width: 100px;
+	width: 120px;
 	font-size: 1.5rem;
 	text-align: center;
 	margin-top: 8px;
 	font-family: 'Roboto Mono', monospace;
+	border-radius: 8px;
+	border-color: $text-dark;
+	border-width: 1px;
+	border-style: solid;
+	padding: 8px;
 }
 
 .recipeTimerControls {
@@ -746,25 +751,25 @@ figcaption {
 }
 
 .recipeTimerButton {
-	padding: 8px;
 	border: 0;
 	height: 40px;
 	width: 40px;
-	background-color: hsl(163, 12%, 72%);
-	
-	border-radius: 100%;
+	padding: 0;
+	background-color: hsl(163, 8%, 88%);
+	border-radius: 40px;
 }
 
 .recipeTimerButton svg {
 	stroke: #3f3f3f;
+	margin: 8px;
 }
 
 .rtbGreen {
-	background-color: hsl(163, 50%, 70%);
+	background-color: hsl(163, 46%, 78%);
 }
 
 .rtbYellow {
-	background-color: hsl(55, 50%, 70%);
+	background-color: hsl(55, 70%, 80%);
 }
 
 
