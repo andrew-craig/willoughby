@@ -869,9 +869,58 @@ figcaption {
 
 }
 
-@media screen and (max-width: 500px) {
+/* Compact list layout: phones (≤500px) and tablets in landscape.
+   The comma acts as OR — either condition triggers all rules.
+   Phones already receive the layout/search rules from the 800px breakpoint above;
+   tablets in landscape need them here since they don't match that breakpoint. */
+@media screen and (max-width: 500px),
+       screen and (min-width: 768px) and (orientation: landscape) and (hover: none) and (pointer: coarse) {
+	html {
+		font-size: 16px;
+	}
+
+	main {
+		width: 100%;
+	}
+
+	.search-container {
+		width: 92%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.image-callout-txt {
+		font-size: 1em;
+		flex-grow: 2;
+		width: 100%;
+		flex-basis: 100%;
+		padding: 0;
+	}
+
+	.hide-mobile {
+		display: none;
+	}
+
+	.image-callout a:nth-child(n+4) {
+		display: none;
+	}
+
+	.image-callout {
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	.image-callout-container div:nth-child(even) > .image-callout-txt {
+		order: 1;
+	}
+
 	.l1-grid-container {
 		grid-template-columns: auto;
+	}
+
+	.latest-gcc:first-child {
+		grid-column-start: auto;
+		grid-column-end: auto;
 	}
 
 	.mobile-gcc-row {
@@ -895,6 +944,18 @@ figcaption {
 		background-color: transparent;
 	}
 
+	.mobile-gc-row > :first-child {
+		order: 2;
+	}
+
+	.mobile-gc-row > .card-title-module {
+		order: 1;
+	}
+
+	.mobile-gc-row > svg#default-image {
+		display: none;
+	}
+
 	.mobile-gc-row > img, .mobile-gc-row > svg {
 		width: 20%;
 		height: 100%;
@@ -902,7 +963,6 @@ figcaption {
 		position: relative;
 		margin: 0;
 	}
-
 
 	.mobile-gc-row > .gatsby-image-wrapper-constrained {
 		width: 20%;
@@ -914,9 +974,14 @@ figcaption {
 		width: 76%;
 		margin: auto 0;
 		position: relative;
-		padding: 0 0.5rem 0 0.8rem;
+		padding: 0 0.8rem 0 0.5rem;
 		background: none;
 		flex-grow: 2;
+	}
+
+	.mobile-gc-row:has(> svg#default-image) .mobile-ctm-row {
+		width: 100%;
+		padding: 0 0.5rem;
 	}
 
 	.search-box {
@@ -924,7 +989,7 @@ figcaption {
 	}
 
 	.tag-button {
-		border-radius:6px;
+		border-radius: 6px;
 	}
 
 	.grid-card img, .grid-card svg {
@@ -951,19 +1016,18 @@ figcaption {
 		text-overflow: ellipsis;
 		overflow: hidden;
 		white-space: nowrap;
-	    font-size: 14px;
-    	color: $article-meta-text-light;
+		font-size: 14px;
+		color: $article-meta-text-light;
 		padding-top: 0.1em;
 	}
 
 	.trips-item {
 		grid-template-columns: auto;
 	}
-
 }
 
 @media print
-{    
+{
     .no-print, .no-print *
     {
         display: none !important;
